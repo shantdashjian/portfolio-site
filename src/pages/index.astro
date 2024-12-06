@@ -1,65 +1,130 @@
----
-
----
-
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-			rel="stylesheet"
-		/>
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Shant Dashjian</title>
-	</head>
-	<body>
-		<style>
-			body {
-				font-family: "Source Code Pro", monospace;
-			}
-		</style>
-		<h1>Shant Dashjian</h1>
-		<p>
-			Hi! I'm Shant and I enjoy programming and teaching. I'm a
-			teacher at <a href="https://www.scrimba.com/" target="_blank"
-				>Scrimba</a
-			>.
-		</p>
-		<ul>
-			<li>
-				Book a mentoring session with me at <a href="https://procodingmentor.com"
-				target="_blank">Pro Coding Mentor</a>
-			</li>
-			<li>
-				Take my AI course <a
-					href="https://www.coursera.org/learn/intro-to-claude-ai"
-					target="_blank">Intro to Claude on Coursera</a
-				>, <a
-				href="https://v2.scrimba.com/claude-ai-c09gsmkso3"
-				target="_blank">Scrimba</a
-			>, and <a
-			href="https://www.youtube.com/watch?v=QfJB9d0J3Iw"
-			target="_blank">freeCodeCamp.org's YouTube Channel</a
-		>.
-			</li>
-			<li>
-				Connect with me on <a
-					href="https://www.linkedin.com/in/shantdashjian/"
-					target="_blank">LinkedIn</a
-				>
-			</li>
-			<li>
-				Check out my portfolio on <a href="https://github.com/shantdashjian" target="_blank"
-					>GitHub</a>
-			</li>
-			<li>
-				Learn with me on my <a href="https://www.youtube.com/@shantdashjian" target="_blank"
-					>YouTube Channel</a>
-			</li>
-		</ul>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Shant</title>
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: "Source Code Pro", monospace;
+        padding: 1em 2em;
+      }
+      li,
+      p {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+      }
+      p img {
+        padding-right: 0.5em;
+      }
+      img {
+        height: 1.3rem;
+      }
+      a:has(img) {
+        display: flex;
+        justify-content: start;
+        padding-right: 0.5em;
+      }
+      a {
+        text-decoration: none;
+      }
+      ul {
+        line-height: 1.8rem;
+        padding: 0 1em;
+        margin: 0;
+      }
+      .hello {
+        height: 5rem;
+      }
+      h1 {
+        margin-bottom: 0;
+      }
+    </style>
+    <h1>Shant Dashjian</h1>
+    <p>
+      <img src="src/images/hello.png" alt="hello" class="hello" />
+      <span
+        >I'm Shant and I enjoy programming and teaching. I'm a teacher at <a
+          href="https://www.scrimba.com/"
+          target="_blank">Scrimba</a
+        >.</span
+      >
+    </p>
+    <ul>
+      <li>
+        <a href="https://procodingmentor.com" target="_blank"
+          ><img src="src/images/calendar.png" alt="book a session" /></a
+        >
+        <span
+          >Book a mentoring session with me at <a
+            href="https://procodingmentor.com"
+            target="_blank">Pro Coding Mentor</a
+          ></span
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.coursera.org/learn/intro-to-claude-ai"
+          target="_blank"
+          ><img src="src/images/course.png" alt="take my course" /></a
+        >
+        <span
+          >Take my AI course <a
+            href="https://www.coursera.org/learn/intro-to-claude-ai"
+            target="_blank">Intro to Claude on Coursera</a
+          >, <a href="https://scrimba.com/claude-ai-c09gsmkso3" target="_blank"
+            >Scrimba</a
+          >, and <a
+            href="https://www.youtube.com/watch?v=QfJB9d0J3Iw"
+            target="_blank">freeCodeCamp.org's YouTube Channel</a
+          ></span
+        >
+      </li>
+      <li>
+        <a href="https://www.youtube.com/@shantdashjian" target="_blank"
+          ><img src="src/images/youtube.png" alt="youtube" /></a
+        >
+        <span
+          >Learn with me on my <a
+            href="https://www.youtube.com/@shantdashjian"
+            target="_blank">YouTube Channel</a
+          ></span
+        >
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/shantdashjian/" target="_blank"
+          ><img src="src/images/linkedin.png" alt="linkedin" /></a
+        >
+        <span
+          >Connect with me on <a
+            href="https://www.linkedin.com/in/shantdashjian/"
+            target="_blank">LinkedIn</a
+          ></span
+        >
+      </li>
+      <li>
+        <a href="https://github.com/shantdashjian" target="_blank"
+          ><img src="src/images/github.png" alt="github" /></a
+        >
+        <span
+          >Check out my portfolio on <a
+            href="https://github.com/shantdashjian"
+            target="_blank">GitHub</a
+          ></span
+        >
+      </li>
+    </ul>
+  </body>
 </html>
