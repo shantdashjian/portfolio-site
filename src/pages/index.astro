@@ -20,8 +20,12 @@
     <style>
       body {
         font-family: "Source Code Pro", monospace;
-        padding: 0.5em 1em;
-				background-color:rgb(244, 251, 237);
+        padding: 0.5em 0.5em;
+        background-color: rgb(244, 251, 237);
+      }
+
+      h1 {
+        text-align: center;
       }
       li {
         list-style: none;
@@ -30,16 +34,16 @@
         align-items: start;
         margin: 0;
       }
-			p {
+      p {
         list-style: none;
         display: flex;
         flex-direction: row;
         align-items: start;
         margin: 0.5em 0;
       }
-			p span {
-				padding-top: 1.5em;
-			}
+      p span {
+        padding-top: 1.5em;
+      }
       p img {
         padding-right: 0.7em;
       }
@@ -65,13 +69,19 @@
       h1 {
         margin-bottom: 0;
       }
+
+      @media screen and (min-width: 768px) {
+        body {
+          padding: 1.5em 10em;
+        }
+      }
     </style>
     <h1>Shant Dashjian</h1>
     <p>
       <img src="/images/hello.png" alt="hello" class="hello" />
       <span
         >I'm Shant and I enjoy programming and teaching. I'm a teacher at <a
-          href="https://www.scrimba.com/"
+          href="https://scrimba.com/home?coupon=SHANT50"
           target="_blank">Scrimba</a
         >.</span
       >
@@ -95,14 +105,14 @@
           ><img src="/images/course.png" alt="take my course" /></a
         >
         <span
-          >Take my AI course <a
+          >Take my Claude AI course on <a
             href="https://www.coursera.org/learn/intro-to-claude-ai"
-            target="_blank">Intro to Claude on Coursera</a
+            target="_blank">Coursera</a
           >, <a href="https://scrimba.com/claude-ai-c09gsmkso3" target="_blank"
             >Scrimba</a
           >, and <a
             href="https://www.youtube.com/watch?v=QfJB9d0J3Iw"
-            target="_blank">freeCodeCamp.org's YouTube Channel</a
+            target="_blank">freeCodeCamp</a
           ></span
         >
       </li>
@@ -133,9 +143,9 @@
           ><img src="/images/github.png" alt="github" /></a
         >
         <span
-          >Check out my portfolio on <a
+          >Check out my <a
             href="https://github.com/shantdashjian"
-            target="_blank">GitHub</a
+            target="_blank">GitHub portfolio</a
           ></span
         >
       </li>
