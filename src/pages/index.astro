@@ -22,16 +22,25 @@
         font-family: "Source Code Pro", monospace;
         padding: 1em 2em;
       }
-      li,
-      p {
+      li {
         list-style: none;
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: start;
         margin: 0;
       }
+			p {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        margin: 0.5em 0;
+      }
+			p span {
+				padding-top: 1.5em;
+			}
       p img {
-        padding-right: 0.5em;
+        padding-right: 0.7em;
       }
       img {
         height: 1.3rem;
@@ -39,14 +48,14 @@
       a:has(img) {
         display: flex;
         justify-content: start;
-        padding-right: 0.5em;
+        padding: 0.2em 0.5em 0 0;
       }
       a {
         text-decoration: none;
       }
       ul {
         line-height: 1.8rem;
-        padding: 0 1em;
+        padding: 0 2em;
         margin: 0;
       }
       .hello {
