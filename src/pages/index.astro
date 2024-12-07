@@ -24,6 +24,12 @@
         background-color: rgb(244, 251, 237);
       }
 
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
       h1 {
         text-align: center;
       }
@@ -36,7 +42,7 @@
         margin: 0;
       }
 
-      .container {
+      .intro-container {
         list-style: none;
         display: flex;
         flex-direction: row;
@@ -81,121 +87,153 @@
         margin-bottom: 0;
       }
 
+      iframe {
+        width: 90vw;
+        aspect-ratio: 3/1.7;
+        border-radius: 0.7rem;
+        border: 3px solid #cb6552;
+        margin-top: 2rem;
+      }
+
       @media screen and (min-width: 768px) {
         body {
-          width: 35rem;
           margin: 3em auto;
+          padding: 0 3rem;
+        }
+
+        .container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: start;
+          margin-top: 4rem;
+        }
+
+        iframe {
+          width: 30rem;
         }
       }
     </style>
     <h1>Shant Dashjian</h1>
     <div class="container">
-      <img
-        src="/images/hello.png"
-        alt="hello"
-        height="88"
-        width="88"
-        class="hello"
-      />
-      <div class="intro">
-        <p>- I'm Shant.</p>
-        <p>- I enjoy programming and teaching.</p>
-        <p>
-          - I'm a teacher at
-          <a href="https://scrimba.com/home?coupon=SHANT50" target="_blank"
-            >Scrimba</a
-          >.
-        </p>
+      <div class="text">
+        <div class="intro-container">
+          <img
+            src="/images/hello.png"
+            alt="hello"
+            height="88"
+            width="88"
+            class="hello"
+          />
+          <div class="intro">
+            <p>- I'm Shant.</p>
+            <p>- I enjoy programming and teaching.</p>
+            <p>
+              - I'm a teacher at
+              <a href="https://scrimba.com/home?coupon=SHANT50" target="_blank"
+                >Scrimba</a
+              >.
+            </p>
+          </div>
+        </div>
+        <ul>
+          <li>
+            <a href="https://procodingmentor.com" target="_blank"
+              ><img
+                src="/images/calendar.png"
+                alt="book a session"
+                height="21"
+                width="21"
+              /></a
+            >
+            <span
+              >Book a mentoring session with me at <a
+                href="https://procodingmentor.com"
+                target="_blank">Pro Coding Mentor</a
+              ></span
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.coursera.org/learn/intro-to-claude-ai"
+              target="_blank"
+              ><img
+                src="/images/course.png"
+                alt="take my course"
+                height="21"
+                width="21"
+              /></a
+            >
+            <span
+              >Take my free Claude AI course on <a
+                href="https://www.coursera.org/learn/intro-to-claude-ai"
+                target="_blank">Coursera</a
+              >, <a
+                href="https://scrimba.com/claude-ai-c09gsmkso3"
+                target="_blank">Scrimba</a
+              >, and <a
+                href="https://www.youtube.com/watch?v=QfJB9d0J3Iw"
+                target="_blank">freeCodeCamp</a
+              ></span
+            >
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@shantdashjian" target="_blank"
+              ><img
+                src="/images/youtube.png"
+                alt="youtube"
+                height="21"
+                width="21"
+              /></a
+            >
+            <span
+              >Learn with my <a
+                href="https://www.youtube.com/@shantdashjian"
+                target="_blank">YouTube Channel</a
+              ></span
+            >
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/shantdashjian/" target="_blank"
+              ><img
+                src="/images/linkedin.png"
+                alt="linkedin"
+                height="21"
+                width="21"
+              /></a
+            >
+            <span
+              >Connect with me on <a
+                href="https://www.linkedin.com/in/shantdashjian/"
+                target="_blank">LinkedIn</a
+              ></span
+            >
+          </li>
+          <li>
+            <a href="https://github.com/shantdashjian" target="_blank"
+              ><img
+                src="/images/github.png"
+                alt="github"
+                height="21"
+                width="21"
+              /></a
+            >
+            <span
+              >Check out my <a
+                href="https://github.com/shantdashjian"
+                target="_blank">GitHub portfolio</a
+              ></span
+            >
+          </li>
+        </ul>
       </div>
+      <iframe
+        src="https://www.youtube.com/embed/QfJB9d0J3Iw"
+        title="Learn Claude AI – Build Text Summarizers, Image Describers, and More with the Anthropic API"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
     </div>
-    <ul>
-      <li>
-        <a href="https://procodingmentor.com" target="_blank"
-          ><img
-            src="/images/calendar.png"
-            alt="book a session"
-            height="21"
-            width="21"
-          /></a
-        >
-        <span
-          >Book a mentoring session with me at <a
-            href="https://procodingmentor.com"
-            target="_blank">Pro Coding Mentor</a
-          ></span
-        >
-      </li>
-      <li>
-        <a
-          href="https://www.coursera.org/learn/intro-to-claude-ai"
-          target="_blank"
-          ><img
-            src="/images/course.png"
-            alt="take my course"
-            height="21"
-            width="21"
-          /></a
-        >
-        <span
-          >Take my free Claude AI course on <a
-            href="https://www.coursera.org/learn/intro-to-claude-ai"
-            target="_blank">Coursera</a
-          >, <a href="https://scrimba.com/claude-ai-c09gsmkso3" target="_blank"
-            >Scrimba</a
-          >, and <a
-            href="https://www.youtube.com/watch?v=QfJB9d0J3Iw"
-            target="_blank">freeCodeCamp</a
-          ></span
-        >
-      </li>
-      <li>
-        <a href="https://www.youtube.com/@shantdashjian" target="_blank"
-          ><img
-            src="/images/youtube.png"
-            alt="youtube"
-            height="21"
-            width="21"
-          /></a
-        >
-        <span
-          >Learn with my <a
-            href="https://www.youtube.com/@shantdashjian"
-            target="_blank">YouTube Channel</a
-          ></span
-        >
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/shantdashjian/" target="_blank"
-          ><img
-            src="/images/linkedin.png"
-            alt="linkedin"
-            height="21"
-            width="21"
-          /></a
-        >
-        <span
-          >Connect with me on <a
-            href="https://www.linkedin.com/in/shantdashjian/"
-            target="_blank">LinkedIn</a
-          ></span
-        >
-      </li>
-      <li>
-        <a href="https://github.com/shantdashjian" target="_blank"
-          ><img
-            src="/images/github.png"
-            alt="github"
-            height="21"
-            width="21"
-          /></a
-        >
-        <span
-          >Check out my <a
-            href="https://github.com/shantdashjian"
-            target="_blank">GitHub portfolio</a
-          ></span
-        >
-      </li>
-    </ul>
   </body>
 </html>
