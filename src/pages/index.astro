@@ -25,12 +25,44 @@
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         user-select: none;
+        transition:
+          background-color 0s,
+          color 0s;
+      }
+
+      :root {
+        --bg-primary: rgb(244, 251, 237);
+        --text-primary: #000;
+        --link-color: #0066cc;
+        --link-hover: #004080;
+        --border-color: #cb6552;
+      }
+
+      :root.dark-theme {
+        --bg-primary: #121212;
+        --text-primary: #e0e0e0;
+        --link-color: #4da6ff;
+        --link-hover: #80c1ff;
+        --border-color: #ff6b6b;
+        .pronounce-btn {
+          background-image: url("/public/images/pronounce-dark.png");
+        }
+        .pronounce-btn:active {
+          background-image: url("/public/images/pronounce-hover-dark.png");
+        }
+
+        @media (hover: hover) {
+          .pronounce-btn:hover {
+            background-image: url("/public/images/pronounce-hover-dark.png");
+          }
+        }
       }
 
       body {
         font-family: "Source Code Pro", monospace;
         padding: 0.5em 0.5em;
-        background-color: rgb(244, 251, 237);
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
       }
 
       .container {
@@ -41,6 +73,32 @@
 
       h1 {
         text-align: center;
+        color: var(--text-primary);
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--link-color);
+        transition: color 0s;
+      }
+
+      a:hover {
+        color: var(--link-hover);
+      }
+
+      iframe {
+        border: 3px solid var(--border-color);
+      }
+
+      .theme-toggle {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        transition: transform 0s;
       }
 
       li {
@@ -149,6 +207,11 @@
           transform: scale(1.5);
           margin-left: 0.5rem;
         }
+
+        .theme-toggle:hover,
+        .icon:hover {
+          transform: scale(1.2);
+        }
       }
 
       @media screen and (min-width: 768px) {
@@ -170,6 +233,8 @@
         }
       }
     </style>
+
+    <button class="theme-toggle" aria-label="Toggle Theme"> 🌓 </button>
     <h1>Shant Dashjian</h1>
     <div class="container">
       <div class="text">
@@ -203,6 +268,8 @@
           <li>
             <a href="https://procodingmentor.com" target="_blank"
               ><img
+                id="calendar-img"
+                class="icon"
                 src="/images/calendar.png"
                 alt="book a session"
                 height="21"
@@ -221,6 +288,7 @@
               href="https://www.coursera.org/learn/intro-to-claude-ai"
               target="_blank"
               ><img
+                class="icon"
                 src="/images/course.png"
                 alt="take my course"
                 height="21"
@@ -243,6 +311,7 @@
           <li>
             <a href="https://www.youtube.com/@shantdashjian" target="_blank"
               ><img
+                class="icon"
                 src="/images/youtube.png"
                 alt="youtube"
                 height="21"
@@ -259,6 +328,7 @@
           <li>
             <a href="https://www.linkedin.com/in/shantdashjian/" target="_blank"
               ><img
+                class="icon"
                 src="/images/linkedin.png"
                 alt="linkedin"
                 height="21"
@@ -275,6 +345,8 @@
           <li>
             <a href="https://github.com/shantdashjian" target="_blank"
               ><img
+                id="github-img"
+                class="icon"
                 src="/images/github.png"
                 alt="github"
                 height="21"
@@ -298,5 +370,55 @@
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen></iframe>
     </div>
+    <script>
+      const themeToggle = document.querySelector(".theme-toggle");
+      const htmlRoot = document.documentElement;
+
+      const savedTheme = localStorage.getItem("theme");
+      const systemPrefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
+
+      function setTheme(theme) {
+        if (theme === "dark") {
+          htmlRoot.classList.add("dark-theme");
+          localStorage.setItem("theme", "dark");
+          document
+            .getElementById("calendar-img")
+            .setAttribute("src", "/images/calendar-dark.png");
+          document
+            .getElementById("github-img")
+            .setAttribute("src", "/images/github-dark.png");
+        } else {
+          htmlRoot.classList.remove("dark-theme");
+          localStorage.setItem("theme", "light");
+          document
+            .getElementById("calendar-img")
+            .setAttribute("src", "/images/calendar.png");
+          document
+            .getElementById("github-img")
+            .setAttribute("src", "/images/github.png");
+        }
+      }
+
+      if (savedTheme) {
+        setTheme(savedTheme);
+      } else if (systemPrefersDark.matches) {
+        setTheme("dark");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = htmlRoot.classList.contains("dark-theme")
+          ? "dark"
+          : "light";
+        setTheme(currentTheme === "light" ? "dark" : "light");
+      });
+
+      systemPrefersDark.addListener((e) => {
+        if (!localStorage.getItem("theme")) {
+          setTheme(e.matches ? "dark" : "light");
+        }
+      });
+    </script>
   </body>
 </html>
