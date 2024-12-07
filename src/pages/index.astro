@@ -18,6 +18,10 @@
   </head>
   <body>
     <style>
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         font-family: "Source Code Pro", monospace;
         padding: 0.5em 0.5em;
@@ -52,7 +56,17 @@
       }
 
       .intro {
-        padding-top: 1.4em;
+        padding-top: 1em;
+      }
+
+      .intro p {
+        height: 2rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .intro p a {
+        margin-left: 0.8rem;
       }
 
       p {
@@ -61,10 +75,6 @@
 
       p span {
         padding-top: 1.5em;
-      }
-
-      p img {
-        padding-right: 0.7em;
       }
 
       a:has(img) {
@@ -93,6 +103,38 @@
         border-radius: 0.7rem;
         border: 3px solid #cb6552;
         margin-top: 2rem;
+      }
+
+      button {
+        padding: 0;
+        border: none;
+        background-color: rgba(0, 0, 0, 0);
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+
+      .name {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+      }
+
+      .pronounce-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("/public/images/pronounce.png");
+        background-size: 100%;
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      .pronounce-btn:hover {
+        background-image: url("/public/images/pronounce-hover.png");
+        transform: scale(1.5);
+        margin-left: 0.5rem;
       }
 
       @media screen and (min-width: 768px) {
@@ -126,12 +168,20 @@
             class="hello"
           />
           <div class="intro">
-            <p>- I'm Shant.</p>
+            <p class="name">
+              - I'm Shant <button
+                class="pronounce-btn"
+                onclick="document.getElementById('pronounce-shant').play()"
+              ></button>
+              <audio
+                id="pronounce-shant"
+                src="/sounds/pronounce-shant.mp3"></audio>
+            </p>
             <p>- I enjoy programming and teaching.</p>
             <p>
-              - I'm a teacher at
-              <a href="https://scrimba.com/home?coupon=SHANT50" target="_blank"
-                >Scrimba</a
+              - I'm a teacher at <a
+                href="https://scrimba.com/home?coupon=SHANT50"
+                target="_blank">Scrimba</a
               >.
             </p>
           </div>
