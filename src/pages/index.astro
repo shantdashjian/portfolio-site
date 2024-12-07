@@ -127,14 +127,23 @@
         align-items: center;
         background-image: url("/public/images/pronounce.png");
         background-size: 100%;
+        touch-action: manipulation;
         width: 2.5rem;
         height: 2.5rem;
       }
 
-      .pronounce-btn:hover {
+      .pronounce-btn:active {
         background-image: url("/public/images/pronounce-hover.png");
         transform: scale(1.5);
         margin-left: 0.5rem;
+      }
+
+      @media (hover: hover) {
+        .pronounce-btn:hover {
+          background-image: url("/public/images/pronounce-hover.png");
+          transform: scale(1.5);
+          margin-left: 0.5rem;
+        }
       }
 
       @media screen and (min-width: 768px) {
@@ -173,9 +182,8 @@
                 class="pronounce-btn"
                 onclick="document.getElementById('pronounce-shant').play()"
               ></button>
-              <audio
-                id="pronounce-shant"
-                src="/sounds/pronounce-shant.mp3"></audio>
+              <audio id="pronounce-shant" src="/sounds/pronounce-shant.mp3"
+              ></audio>
             </p>
             <p>- I enjoy programming and teaching.</p>
             <p>
