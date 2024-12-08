@@ -165,12 +165,24 @@
         margin-bottom: 0;
       }
 
-      iframe {
+      #youtube-iframe,
+      #video-placeholder {
         width: 90vw;
         aspect-ratio: 3/1.7;
         border-radius: 0.7rem;
         border: 3px solid #cb6552;
         margin-top: 2rem;
+      }
+
+      #youtube-iframe {
+        display: none;
+      }
+
+      #video-placeholder {
+        background-image: url("/images/video-placeholder.jpg");
+        background-size: cover;
+        background-position: center;
+        display: block;
       }
 
       button {
@@ -233,7 +245,8 @@
           margin-top: 4rem;
         }
 
-        iframe {
+        #youtube-iframe,
+        #video-placeholder {
           width: 30rem;
         }
       }
@@ -368,12 +381,14 @@
         </ul>
       </div>
       <iframe
+        id="youtube-iframe"
         src="https://www.youtube.com/embed/QfJB9d0J3Iw"
         title="Learn Claude AI – Build Text Summarizers, Image Describers, and More with the Anthropic API"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen></iframe>
+      <div id="video-placeholder"></div>
     </div>
     <script>
       const themeToggle = document.querySelector(".theme-toggle");
@@ -423,6 +438,24 @@
         if (!localStorage.getItem("theme")) {
           setTheme(e.matches ? "dark" : "light");
         }
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const iframe = document.getElementById("youtube-iframe");
+        const placeholder = document.getElementById("video-placeholder");
+
+        iframe.addEventListener("load", () => {
+          placeholder.style.display = "none";
+          iframe.style.display = "block";
+        });
+
+        // Fallback in case iframe doesn't trigger load event
+        setTimeout(() => {
+          if (placeholder.style.display !== "none") {
+            placeholder.style.display = "none";
+            iframe.style.display = "block";
+          }
+        }, 5000);
       });
     </script>
   </body>
