@@ -444,18 +444,29 @@
         const iframe = document.getElementById("youtube-iframe");
         const placeholder = document.getElementById("video-placeholder");
 
-        iframe.addEventListener("load", () => {
+        // More reliable method to check iframe loading
+        iframe.onload = () => {
           placeholder.style.display = "none";
           iframe.style.display = "block";
-        });
+        };
 
-        // Fallback in case iframe doesn't trigger load event
+        // Fallback mechanism with longer timeout and additional check
         setTimeout(() => {
-          if (placeholder.style.display !== "none") {
-            placeholder.style.display = "none";
-            iframe.style.display = "block";
+          if (placeholder && iframe) {
+            // Check if iframe is actually loaded using contentWindow
+            try {
+              const iframeContent = iframe.contentWindow;
+              if (iframeContent) {
+                placeholder.style.display = "none";
+                iframe.style.display = "block";
+              }
+            } catch (error) {
+              // If cross-origin restrictions prevent checking contentWindow
+              placeholder.style.display = "none";
+              iframe.style.display = "block";
+            }
           }
-        }, 2000);
+        }, 1000); // Extended timeout to 1 seconds
       });
     </script>
   </body>
